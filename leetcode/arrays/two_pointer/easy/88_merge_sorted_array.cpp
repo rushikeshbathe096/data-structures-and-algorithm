@@ -1,18 +1,13 @@
-```cpp
 /*
 Problem:
-Given two sorted arrays nums1 and nums2 with m and n valid elements,
-merge them into nums1 in non-decreasing order. nums1 has size m + n,
-with its last n positions reserved for the merge.
+Given two sorted arrays nums1 and nums2 with m and n valid elements,merge them into nums1 in non-decreasing order. nums1 has size m + n,with its last n positions reserved for the merge.
 
 Example:
-nums1 = [1,2,3,0,0,0], m = 3
-nums2 = [2,5,6], n = 3
+nums1 = [1,2,3,0,0,0], m = 3 nums2 = [2,5,6], n = 3
 Output: [1,2,2,3,5,6]
 
 Approach:
-Start from the end of both arrays and compare their largest remaining elements. Since if we start from beginning it can overwrite values and so we cannot recover back. 
-Place the larger one at the last available position in nums1 and move the corresponding pointers backward. After one array is exhausted, copy any remaining elements from nums2.
+Start from the end of both arrays and compare their largest remaining elements. Since if we start from beginning it can overwrite values and so we cannot recover back. Place the larger one at the last available position in nums1 and move the corresponding pointers backward. After one array is exhausted, copy any remaining elements from nums2.
 
 Time Complexity: O(m + n)
 Space Complexity: O(1)
@@ -56,4 +51,4 @@ int main() {
 
     return 0;
 }
-```
+
