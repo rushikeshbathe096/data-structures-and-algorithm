@@ -1,4 +1,4 @@
-```cpp
+
 /*
 Problem:
 Given two strings needle and haystack, return the index of the first occurrence
@@ -52,4 +52,4 @@ int main() {
 
     return 0;
 }
-```
+
