@@ -1,0 +1,44 @@
+/*
+LeetCode 1846. Maximum Element After Decreasing and Rearranging
+
+Problem:
+Given an array of positive integers, you may rearrange the elements in any order and decrease any element to a smaller positive integer. Modify the array so that the first element is 1 and the absolute difference between adjacent elements is at most 1. Return the maximum possible element after these operations.
+
+Constraints:
+- 1 <= arr.length <= 10^5
+- 1 <= arr[i] <= 10^9
+
+Example:
+Input: arr = [100,1,1000]
+Output: 3
+
+Approach:
+Sort the array in non-decreasing order. Set the first element to 1 if needed. Then iterate through the array, ensuring that each element is at most one greater than its previous element. If the difference exceeds 1, decrease the current element to the previous element plus one. The last element of the modified array is the maximum possible value.
+
+Time Complexity: O(n log n)
+Sorting the array dominates the overall time complexity.
+
+Space Complexity: O(1)
+The array is modified in place, using only a constant amount of extra space.
+
+Edge Cases:
+- The smallest element is greater than 1.
+- The array is already valid.
+- Very large element values.
+- Duplicate elements.
+- Array of size 1.
+*/
+class Solution {
+public:
+    int maximumElementAfterDecrementingAndRearranging(vector<int>& arr) {
+        int n=arr.size();
+        sort(arr.begin(),arr.end());
+        if(arr[0]!=1)arr[0]=1;
+        for(int i=1;i<n;i++){
+            if(abs(arr[i]-arr[i-1])>1){
+                arr[i]=arr[i-1]+1;
+            }
+        }
+        return arr[n-1];
+    }
+};
